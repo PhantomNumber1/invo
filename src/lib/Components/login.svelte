@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { writable } from 'svelte/store';
-    import { apiBaseUrl } from '$lib/assets/config';
+    //import { apiBaseUrl } from '$lib/assets/config';
 
     let username = '';
     let password = '';
