@@ -46,6 +46,7 @@
   }
 
   const login = async () => {
+    loadApiUrl
         const response = await fetch('${apiBaseUrl}/api/login', {
             method: 'POST',
             headers: {
