@@ -1,24 +1,14 @@
 <script>
     import { onMount } from 'svelte';
     import { writable } from 'svelte/store';
+    import { apiBaseUrl } from '$lib/assets/config';
 
     let username = '';
     let password = '';
     let message = writable('');
     let apiBaseUrl = ""; 
 
-    const loadApiUrl = async () => {
-    try {
-      const response = await fetch('../../routes/ngrok.txt');
-      const url = await response.text();
-      apiBaseUrl = url.trim(); // Store the base URL from the file
-    } catch (error) {
-      console.error("Failed to load API URL from file:", error);
-    }
-  };
-
     const register = async () => {
-        loadApiUrl();
         const response = await fetch('${apiBaseUrl}/api/register', {
             method: 'POST',
             headers: {

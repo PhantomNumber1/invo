@@ -4,6 +4,7 @@
   import car from "../lib/assets/images/login-car.jpg"
 	import { goto } from '$app/navigation';
   import { isAuthenticated } from '../stores/auth';
+  import { apiBaseUrl } from '$lib/assets/config';
 
   
   let signup = false;
@@ -25,17 +26,7 @@
   let lastScroll = 3;
   let container;
   let message = "";
-  let apiBaseUrl = ""; 
 
-  const loadApiUrl = async () => {
-    try {
-      const response = await fetch('/ngrok.txt');
-      const url = await response.text();
-      apiBaseUrl = url.trim(); // Store the base URL from the file
-    } catch (error) {
-      console.error("Failed to load API URL from file:", error);
-    }
-  }
 
   function nothing(){
     alert("This feature needs to be added");
@@ -46,7 +37,6 @@
   }
 
   const login = async () => {
-        loadApiUrl()
         const response = await fetch('${apiBaseUrl}/api/login', {
             method: 'POST',
             headers: {

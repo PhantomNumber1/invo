@@ -21,11 +21,11 @@ start_ngrok()
 time.sleep(5)  # Wait for ngrok to start and be available
 
 # Update a file with the ngrok URL
-file_path = "src/routes/ngrok.txt"  # Path to the ngrok.txt file within your repo
+file_path = "src/lib/assets/config.js"  # Path to the ngrok.txt file within your repo
 
 ngrok_url = get_ngrok_url()
 with open(file_path, "w") as file:
-    file.write(f"{ngrok_url}\n")
+    file.write(f"export const apiBaseUrl = '{ngrok_url}';\n")
 
 # Add, commit, and push the changes to Git
 repo_dir = "E:/Hackathon/Volvo Hackathon/Deployable"  # Change this to your local repository path

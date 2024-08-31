@@ -1,5 +1,6 @@
 <script>
 	import { text } from "@sveltejs/kit";
+    import { apiBaseUrl } from "$lib/assets/config";
 
     /**
 	 * @type {string | any[] }
@@ -11,17 +12,8 @@
     let repeatpassword = "";
     let email = "";
     let message = "";
-    let apiBaseUrl = ""; 
 
-    const loadApiUrl = async () => {
-    try {
-      const response = await fetch('/ngrok.txt');
-      const url = await response.text();
-      apiBaseUrl = url.trim(); // Store the base URL from the file
-    } catch (error) {
-      console.error("Failed to load API URL from file:", error);
-    }
-  };
+
 
     const sendOTP = async () => {
         if (password === repeatpassword) {
