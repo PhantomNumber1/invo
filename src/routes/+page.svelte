@@ -4,7 +4,7 @@
   import car from "../lib/assets/images/login-car.jpg"
 	import { goto } from '$app/navigation';
   import { isAuthenticated } from '../stores/auth';
-  import { apiBaseUrl } from '$lib/assets/config';
+  let apiBaseUrl = 'https://665b-122-172-81-83.ngrok-free.app'; 
 
   
   let signup = false;
