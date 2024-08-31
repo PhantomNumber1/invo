@@ -1,0 +1,1 @@
+import{s as t,o as s}from"../chunks/scheduler.D9a1m4Jg.js";import{S as n,i as a}from"../chunks/index.BuLmxrIS.js";import{g as r,b as i}from"../chunks/entry.B4YP9iaR.js";function m(e){alert("This feature yet to be added.");function o(){r(i+"/home")}return s(()=>{o()}),[]}class l extends n{constructor(o){super(),a(this,o,m,null,t,{})}}export{l as component};
