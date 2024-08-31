@@ -39,7 +39,7 @@
 
     const signUp = async () => {
         if (password === repeatpassword) {
-            const response = await fetch('https://30c1-122-172-81-83.ngrok-free.app/api/register', {
+            const response = await fetch('https://f789-122-172-81-83.ngrok-free.app/api/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
