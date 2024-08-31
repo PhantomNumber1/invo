@@ -18,6 +18,7 @@
   };
 
     const register = async () => {
+        loadApiUrl();
         const response = await fetch('${apiBaseUrl}/api/register', {
             method: 'POST',
             headers: {
