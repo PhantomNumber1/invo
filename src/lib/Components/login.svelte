@@ -6,7 +6,7 @@
     let username = '';
     let password = '';
     let message = writable('');
-    let apiBaseUrl = ""; 
+    let apiBaseUrl = 'https://665b-122-172-81-83.ngrok-free.app'; 
 
     const register = async () => {
         const response = await fetch('${apiBaseUrl}/api/register', {
