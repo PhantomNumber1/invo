@@ -11,10 +11,21 @@
     let repeatpassword = "";
     let email = "";
     let message = "";
+    let apiBaseUrl = ""; 
+
+    const loadApiUrl = async () => {
+    try {
+      const response = await fetch('/ngrok.txt');
+      const url = await response.text();
+      apiBaseUrl = url.trim(); // Store the base URL from the file
+    } catch (error) {
+      console.error("Failed to load API URL from file:", error);
+    }
+  };
 
     const sendOTP = async () => {
         if (password === repeatpassword) {
-            const response = await fetch('https://30c1-122-172-81-83.ngrok-free.app/api/sendOTP', {
+            const response = await fetch('${apiBaseUrl}/api/sendOTP', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

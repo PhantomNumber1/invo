@@ -25,6 +25,17 @@
   let lastScroll = 3;
   let container;
   let message = "";
+  let apiBaseUrl = ""; 
+
+  const loadApiUrl = async () => {
+    try {
+      const response = await fetch('/ngrok.txt');
+      const url = await response.text();
+      apiBaseUrl = url.trim(); // Store the base URL from the file
+    } catch (error) {
+      console.error("Failed to load API URL from file:", error);
+    }
+  }
 
   function nothing(){
     alert("This feature needs to be added");
@@ -35,7 +46,7 @@
   }
 
   const login = async () => {
-        const response = await fetch('https://f789-122-172-81-83.ngrok-free.app/api/login', {
+        const response = await fetch('${apiBaseUrl}/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

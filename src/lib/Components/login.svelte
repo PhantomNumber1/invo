@@ -5,9 +5,20 @@
     let username = '';
     let password = '';
     let message = writable('');
+    let apiBaseUrl = ""; 
+
+    const loadApiUrl = async () => {
+    try {
+      const response = await fetch('../../routes/ngrok.txt');
+      const url = await response.text();
+      apiBaseUrl = url.trim(); // Store the base URL from the file
+    } catch (error) {
+      console.error("Failed to load API URL from file:", error);
+    }
+  };
 
     const register = async () => {
-        const response = await fetch('https://f789-122-172-81-83.ngrok-free.app/api/register', {
+        const response = await fetch('${apiBaseUrl}/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -19,7 +30,7 @@
     };
 
     const login = async () => {
-        const response = await fetch('https://f789-122-172-81-83.ngrok-free.app/api/login', {
+        const response = await fetch('${apiBaseUrl}/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
