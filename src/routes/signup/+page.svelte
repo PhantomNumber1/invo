@@ -1,6 +1,7 @@
 <script>
 	import { text } from "@sveltejs/kit";
     import { apiBaseUrl } from "$lib/assets/config";
+    let apiBaseUrl = ''
 
     /**
 	 * @type {string | any[] }

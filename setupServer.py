@@ -36,4 +36,5 @@ origin = repo.remote(name='origin')
 origin.push()
 
 print(f"Ngrok URL ({ngrok_url}) saved to {file_path} and changes pushed to Git.")
+input()
 
